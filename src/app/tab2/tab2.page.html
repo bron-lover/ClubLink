@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-header> 
+    <ion-searchbar clear-icon="trash-bin" animated="true" (ionInput)="filterClubs($event)" placeholder="Search Clubs" show-clear-button="focus"></ion-searchbar>
+  </ion-header>
+    
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let club of filteredClubs">
+        <ion-card class="club-card" (click)="openDetails(club.id)">
+          <ion-card-header>
+            <ion-card-title>{{ club?.name }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
